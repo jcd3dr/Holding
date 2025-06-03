@@ -44,7 +44,7 @@ ul {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    /* background-blend-mode: multiply; */ 
+    background-blend-mode: multiply;
     color: var(--light-text-color); /* Para que el texto se vea */
     padding: 100px 0; /* Para darle altura al hero */
     text-align: center;
