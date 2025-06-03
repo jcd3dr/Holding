@@ -40,7 +40,7 @@ ul {
 
 .hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%), 
-                url('fondo-hero.png') no-repeat center center/cover; /* ¡Esta es la línea crucial! */
+                url('https://commons.wikimedia.org/wiki/File:PNG_Test.png') no-repeat center center/cover; /* ¡Esta es la línea crucial! */
     background-blend-mode: multiply; 
     color: var(--light-text-color);
     padding: 100px 0;
