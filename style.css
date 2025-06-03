@@ -1,0 +1,356 @@
+/* Variables CSS para una gestión más fácil de colores y fuentes */
+:root {
+    --primary-color: #2c3e50; /* Azul oscuro muy corporativo */
+    --secondary-color: #3498db; /* Azul corporativo un poco más claro */
+    --accent-color: #27ae60; /* Un verde sutil para acentos o éxito */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --bg-light: #f9f9f9;
+    --bg-dark: #2c3e50; /* Mantener el azul oscuro para fondos */
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombras más suaves */
+    --box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset básico (mantener el que ya tienes) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Puedes considerar 'Roboto', 'Lato' o 'Montserrat' de Google Fonts para un toque más moderno */
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-light);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color); /* Enlaces en el color corporativo */
+}
+
+ul {
+    list-style: none;
+}
+
+/* Encabezado y Navegación */
+
+.hero {
+    /* Asegúrate de que la extensión sea .png si el archivo es PNG */
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%), 
+                url('medios/fondo-hero.png') no-repeat center center/cover;
+    background-blend-mode: multiply; /* Mantiene el efecto de mezcla con el degradado */
+    color: var(--light-text-color);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--light-text-color);
+}
+
+.nav-links {
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--light-text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-content {
+    max-width: 900px; /* Un poco más ancho para el eslogan */
+    margin: 0 auto;
+    padding-top: 50px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem; /* Tamaño de fuente ligeramente más grande */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra de texto más pronunciada */
+}
+
+.hero-content p {
+    font-size: 1.4rem; /* Tamaño de fuente ligeramente más grande */
+    margin-bottom: 40px;
+    opacity: 0.9; /* Ligeramente más translúcido para que se mezcle con el fondo */
+}
+
+/* El botón primario ya no se usa en el hero, pero lo mantenemos por si acaso */
+.btn-primary {
+    display: inline-block;
+    background: var(--accent-color); /* Usamos el color de acento */
+    color: var(--light-text-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: var(--box-shadow-dark);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Secciones Generales */
+.section {
+    padding: 80px 50px;
+    text-align: center;
+    background: var(--bg-light);
+    transition: background 0.5s ease;
+}
+
+.section h2 {
+    font-size: 2.8rem; /* Títulos de sección más grandes */
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px; /* Línea inferior más larga */
+    height: 4px;
+    background: var(--secondary-color); /* Línea del color secundario */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.content-wrapper { /* Clase para contener el texto de "Acerca de" */
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: justify; /* Texto justificado para formalidad */
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.content-wrapper p {
+    margin-bottom: 1.5em; /* Espacio entre párrafos */
+}
+
+
+/* Sección Servicios (ahora Portafolio) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Asegurar centrado del contenido */
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.service-item .icon-large {
+    font-size: 3.5rem;
+    color: var(--secondary-color); /* Color del icono */
+    margin-bottom: 20px;
+    display: block;
+}
+
+.service-item h3 {
+    font-size: 1.6rem; /* Título de ítem de servicio ligeramente más pequeño */
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+
+/* Sección Nosotros (ahora Portafolio con gradiente de fondo) */
+.section.bg-gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--bg-dark)); /* Un gradiente más sutil */
+    color: var(--light-text-color);
+}
+
+/* Contacto */
+.contact-email {
+    font-size: 1.5rem; /* Tamaño de email más grande */
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.contact-email a {
+    color: var(--primary-color); /* El email link en color principal */
+    transition: color 0.3s ease;
+}
+
+.contact-email a:hover {
+    color: var(--secondary-color);
+}
+
+/* Pie de página */
+footer {
+    background: var(--bg-dark);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem; /* Fuente más pequeña para el footer */
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.legal-links a {
+    text-decoration: underline; /* Subrayar enlaces legales */
+}
+
+/* Animaciones CSS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); } /* Antes 20px */
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+    from { opacity: 0; transform: translateY(80px); } /* Antes 50px */
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Clases para aplicar con JavaScript */
+.fade-in.animate {
+    animation: fadeIn 1.2s ease-out forwards; /* Antes 1s */
+}
+
+.slide-up.animate {
+    animation: slideInUp 1.2s ease-out forwards; /* Antes 1s */
+}
+
+
+/* Responsive Design (mantener el que ya tienes) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(44, 62, 80, 0.95);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+        animation: slideDownMenu 0.4s ease-out forwards;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--light-text-color);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .section {
+        padding: 50px 20px;
+    }
+
+    .section h2 {
+        font-size: 2.2rem;
+    }
+
+    .content-wrapper {
+        text-align: left; /* Justificar el texto solo en pantallas grandes */
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes slideDownMenu {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
