@@ -46,7 +46,8 @@ ul {
     background-size: cover;
     background-blend-mode: multiply;
     color: var(--light-text-color); /* Para que el texto se vea */
-    padding: 100px 0; /* Para darle altura al hero */
+    padding: 200px 0; /* Para darle altura al hero */
+    min-height: 100vh
     text-align: center;
     /* position: relative; */
     /* overflow: hidden; */
