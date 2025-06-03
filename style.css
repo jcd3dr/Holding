@@ -1,5 +1,5 @@
-/* Variables CSS para una gestión más fácil de colores y fuentes */
-:root {
+ /* Variables CSS para una gestión más fácil de colores y fuentes */:root {
+     
     --primary-color: #2c3e50; /* Azul oscuro muy corporativo */
     --secondary-color: #3498db; /* Azul corporativo un poco más claro */
     --accent-color: #27ae60; /* Un verde sutil para acentos o éxito */
@@ -39,19 +39,19 @@ ul {
 
 
 .hero {
-    /* Combina el degradado y la imagen, con background-blend-mode */
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%), 
-                url('fondo-hero.png') no-repeat center center/cover;
-    background-blend-mode: multiply; /* Este modo mezcla los colores del degradado con los de la imagen */
-
-    color: var(--light-text-color);
-    padding: 100px 0;
+    /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%), */ 
+    background-image: url('fondo-hero.png'); /* Solo la imagen */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /* background-blend-mode: multiply; */ 
+    color: var(--light-text-color); /* Para que el texto se vea */
+    padding: 100px 0; /* Para darle altura al hero */
     text-align: center;
-    position: relative; /* Mantener esto para el z-index de la navbar */
-    overflow: hidden; /* Importante para el parallax */
-    background-attachment: fixed; /* Habilita el efecto parallax */
-
-    /* Puedes quitar el background-color: lightgray; ahora que la imagen se ve */
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* background-attachment: fixed; */
+    background-color: lightgray; /* Color de respaldo para ver si el hero tiene altura */
 }
 
 
