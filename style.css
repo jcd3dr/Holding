@@ -40,7 +40,7 @@ ul {
 .hero {
     /* Asegúrate de que la extensión sea .png si el archivo es PNG */
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%), 
-                url('medios/fondo-hero.png') no-repeat center center/cover;
+                url('fondo-hero.png') no-repeat center center/cover;
     background-blend-mode: multiply; /* Mantiene el efecto de mezcla con el degradado */
     color: var(--light-text-color);
     padding: 100px 0;
