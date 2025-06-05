@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Menú de Navegación Responsivo (Hamburguesa)
     const mobileMenu = document.getElementById('mobile-menu');
@@ -32,8 +34,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target); // Dejar de observar una vez que se ha animado
+                if (entry.target.id === 'portafolio') {
+                    // La sección principal 'portafolio' ya tiene 'slide-up' que la hace visible.
+                    // No necesitamos entry.target.classList.add('animate'); aquí si slide-up ya lo hace.
+                    // Si 'slide-up' en la sección es solo para el fondo o título, entonces sí se necesita.
+                    // Asumimos que 'slide-up' en la sección '.bg-gradient' ya la hace visible.
+                    // Si no, descomentar: entry.target.classList.add('animate');
+
+                    const serviceItems = entry.target.querySelectorAll('.service-item');
+                    serviceItems.forEach((item, index) => {
+                        item.style.transitionDelay = `${index * 0.1}s`; // Stagger delay
+                        item.classList.add('animate-service-item');
+                    });
+                    // No des-observar entry.target aquí si la animación de los items es manejada por esta entrada.
+                    // O sí, si solo queremos que se dispare una vez.
+                    observer.unobserve(entry.target);
+                } else {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target); // Dejar de observar una vez que se ha animado
+                }
             }
         });
     }, observerOptions);
@@ -48,7 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroSection) {
         window.addEventListener('scroll', () => {
             let scrollY = window.pageYOffset;
-            heroSection.style.backgroundPositionY = -scrollY * 0.3 + 'px'; // Ajusta la velocidad aquí
+            // heroSection.style.backgroundPositionY = -scrollY * 0.3 + 'px'; // Ajusta la velocidad aquí
+            heroSection.style.setProperty('--parallax-offset', -scrollY * 0.3 + 'px');
         });
     }
 

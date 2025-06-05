@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Puedes considerar 'Roboto', 'Lato' o 'Montserrat' de Google Fonts para un toque más moderno */
+    font-family: 'Roboto', sans-serif; /* Actualizado a Roboto */
     line-height: 1.6;
     color: var(--text-color);
     background: var(--bg-light);
@@ -39,20 +39,27 @@ ul {
 
 
 .hero {
-    /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%), */ 
-    background-image: url('fondo-hero.png'); /* Solo la imagen */
+    color: var(--light-text-color); /* Para que el texto se vea */
+    padding: 200px 0; /* Para darle altura al hero */
+    min-height: 100vh; /* Ajustado de 200vh */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%; /* Ajusta este valor según sea necesario */
+    background-image: url('fondo-hero.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    background-blend-mode: multiply;
-    color: var(--light-text-color); /* Para que el texto se vea */
-    padding: 200px 0; /* Para darle altura al hero */
-    min-height: 200vh
-    text-align: center;
-    /* position: relative; */
-    /* overflow: hidden; */
-    /* background-attachment: fixed; */
-    background-color: lightgray; /* Color de respaldo para ver si el hero tiene altura */
+    z-index: -1;
+    transform: translateY(var(--parallax-offset, 0px));
 }
 
 
@@ -85,18 +92,18 @@ ul {
 .nav-links a {
     color: var(--light-text-color);
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease; /* Added transform */
 }
 
 .nav-links a:hover {
     color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px); /* Added lift */
 }
 
 .hero-content {
     max-width: 900px; /* Un poco más ancho para el eslogan */
     margin: 0 auto;
     padding-top: 50px;
-    animation: fadeIn 1.5s ease-out;
 }
 
 .hero-content h1 {
@@ -180,13 +187,16 @@ ul {
     padding: 30px;
     border-radius: 10px;
     box-shadow: var(--box-shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     text-align: center; /* Asegurar centrado del contenido */
+    border: 1px solid transparent; /* Para la transición del borde */
+    opacity: 0; /* Ocultar inicialmente para animación stagger */
 }
 
 .service-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color); /* Color del borde en hover */
 }
 
 .service-item .icon-large {
@@ -194,6 +204,12 @@ ul {
     color: var(--secondary-color); /* Color del icono */
     margin-bottom: 20px;
     display: block;
+    transition: transform 0.3s ease, color 0.3s ease; /* Transición para el icono */
+}
+
+.service-item:hover .icon-large {
+    transform: scale(1.1);
+    color: var(--accent-color); /* Color del icono en hover */
 }
 
 .service-item h3 {
@@ -223,11 +239,12 @@ ul {
 
 .contact-email a {
     color: var(--primary-color); /* El email link en color principal */
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Added text-decoration */
 }
 
 .contact-email a:hover {
     color: var(--secondary-color);
+    text-decoration: underline; /* Added underline */
 }
 
 /* Pie de página */
@@ -244,27 +261,68 @@ footer p {
 }
 
 .legal-links a {
+    color: var(--light-text-color); /* Ensure base color is set */
     text-decoration: underline; /* Subrayar enlaces legales */
+    transition: color 0.3s ease;
+}
+
+.legal-links a:hover {
+    color: #ffffff; /* Brighter white for hover */
 }
 
 /* Animaciones CSS */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(40px); } /* Antes 20px */
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(40px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes slideInUp {
-    from { opacity: 0; transform: translateY(80px); } /* Antes 50px */
+    from { opacity: 0; transform: translateY(80px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeInFromBottom {
+    from { opacity: 0; transform: translateY(50px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hero-title-animate {
+    opacity: 0; /* Iniciar invisible */
+    animation: fadeInFromBottom 1s ease-out 0.5s forwards;
+}
+
+.hero-subtitle-animate {
+    opacity: 0; /* Iniciar invisible */
+    animation: fadeInFromBottom 1s ease-out 0.8s forwards;
+}
+
+@keyframes fadeInFromTop {
+    from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+.nav-item-animate {
+    opacity: 0; /* Iniciar invisible */
+    animation: fadeInFromTop 0.8s ease-out 1.2s forwards;
+}
+
+
 /* Clases para aplicar con JavaScript */
 .fade-in.animate {
-    animation: fadeIn 1.2s ease-out forwards; /* Antes 1s */
+    animation: fadeIn 1.2s ease-out forwards;
 }
 
 .slide-up.animate {
-    animation: slideInUp 1.2s ease-out forwards; /* Antes 1s */
+    animation: slideInUp 1.2s ease-out forwards;
+}
+
+@keyframes serviceItemAppear {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.service-item.animate-service-item {
+    animation: serviceItemAppear 0.5s ease-out forwards;
 }
 
 
@@ -343,6 +401,11 @@ footer p {
 
     .services-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero {
+        /* Parallax puede ser deshabilitado aquí si causa problemas: */
+        --parallax-offset: 0px;
     }
 }
 
