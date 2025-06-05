@@ -374,11 +374,13 @@ footer p {
     text-align: center;
     padding: 0 20px;
   }
-
-  .hero-content {
-    text-align: center;
-    max-width: 100%;
+ .hero {
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* en móviles evita bugs de fixed */
   }
+}
     .nav-links {
         display: none;
         flex-direction: column;
