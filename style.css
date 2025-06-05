@@ -44,7 +44,7 @@ ul {
     min-height: 100vh; /* Ajustado de 200vh */
     text-align: center;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */ /* Removed, may interfere with fixed background attachment */
 }
 
 .hero::before {
@@ -53,13 +53,15 @@ ul {
     top: 0;
     left: 0;
     width: 100%;
-    height: 120%; /* Ajusta este valor según sea necesario */
+    height: 100%; /* Should cover the .hero area, changed from 120% */
     background-image: url('fondo-hero.png');
+    background-size: contain; /* Changed from cover */
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-attachment: fixed; /* Added for fixed parallax */
+    /* transform: translateY(var(--parallax-offset, 0px)); REMOVED */
+    background-color: var(--primary-color); /* Added for letterbox areas */
     z-index: -1;
-    transform: translateY(var(--parallax-offset, 0px));
 }
 
 
@@ -226,8 +228,9 @@ ul {
 
 /* Sección Nosotros (ahora Portafolio con gradiente de fondo) */
 .section.bg-gradient {
-    background: linear-gradient(45deg, var(--primary-color), var(--bg-dark)); /* Un gradiente más sutil */
-    color: var(--light-text-color);
+    /* background: linear-gradient(45deg, var(--primary-color), var(--bg-dark)); */ /* Old gradient: Un gradiente más sutil */
+    background: linear-gradient(45deg, var(--bg-light), #e6f3ff); /* New soft gradient */
+    color: var(--text-color); /* New text color for contrast */
 }
 
 /* Contacto */
@@ -362,6 +365,8 @@ footer p {
 
     .nav-links li {
         margin: 10px 0;
+        text-align: center; /* Center text within list items */
+        width: 100%; /* Ensure li takes full width for text centering */
     }
 
     .menu-toggle {
@@ -389,6 +394,11 @@ footer p {
     }
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-content { /* Added padding for mobile */
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .hero-content h1 {
@@ -441,4 +451,35 @@ footer p {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+/* Scroll-to-Top Button */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--secondary-color); /* Or --primary-color */
+    color: var(--light-text-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make it circular */
+    text-align: center;
+    font-size: 24px; /* Size of the icon */
+    line-height: 50px; /* Vertically center icon */
+    z-index: 999; /* Below menu (1001) but above most content */
+    cursor: pointer;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    transform: translateY(20px); /* Start slightly lower for a subtle appear animation */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Move to final position */
+}
+
+.scroll-to-top-btn:hover {
+    background-color: var(--primary-color); /* Darken on hover, if secondary is the base */
 }

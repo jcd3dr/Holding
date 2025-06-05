@@ -63,14 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Efecto Parallax Básico (opcional y más avanzado)
     // Este es un ejemplo simple, para efectos más complejos se recomienda una librería.
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            let scrollY = window.pageYOffset;
-            // heroSection.style.backgroundPositionY = -scrollY * 0.3 + 'px'; // Ajusta la velocidad aquí
-            heroSection.style.setProperty('--parallax-offset', -scrollY * 0.3 + 'px');
-        });
-    }
+    // const heroSection = document.querySelector('.hero');
+    // if (heroSection) {
+    //     window.addEventListener('scroll', () => {
+    //         let scrollY = window.pageYOffset;
+    //         // heroSection.style.backgroundPositionY = -scrollY * 0.3 + 'px'; // Ajusta la velocidad aquí
+    //         heroSection.style.setProperty('--parallax-offset', -scrollY * 0.3 + 'px');
+    //     });
+    // }
 
     // Ejemplo de formulario de contacto (sólo frontend)
     const contactForm = document.querySelector('.contact-form');
@@ -80,6 +80,28 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
             // Aquí es donde normalmente enviarías los datos a un servidor (backend)
             contactForm.reset(); // Limpia el formulario
+        });
+    }
+
+    // Scroll-to-Top Button Logic
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    const scrollThreshold = 300; // Show button after scrolling 300px
+
+    if (scrollToTopBtn) { // Check if the button exists
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default anchor behavior
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
 });
