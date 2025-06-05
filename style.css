@@ -1,17 +1,17 @@
- /* Variables CSS para una gestión más fácil de colores y fuentes */:root {
-     
-    --primary-color: #2c3e50; /* Azul oscuro muy corporativo */
-    --secondary-color: #3498db; /* Azul corporativo un poco más claro */
-    --accent-color: #27ae60; /* Un verde sutil para acentos o éxito */
+/* Variables CSS para una gestión más fácil de colores y fuentes */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #27ae60;
     --text-color: #333;
     --light-text-color: #f4f4f4;
     --bg-light: #f9f9f9;
-    --bg-dark: #2c3e50; /* Mantener el azul oscuro para fondos */
-    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombras más suaves */
+    --bg-dark: #2c3e50;
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05);
     --box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Reset básico (mantener el que ya tienes) */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif; /* Puedes considerar 'Roboto', 'Lato' o 'Montserrat' de Google Fonts para un toque más moderno */
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background: var(--bg-light);
@@ -28,20 +28,19 @@ body {
 
 a {
     text-decoration: none;
-    color: var(--secondary-color); /* Enlaces en el color corporativo */
+    color: var(--secondary-color);
 }
 
 ul {
     list-style: none;
 }
 
-/* Encabezado y Navegación */
-
+/* HERO principal */
 .hero {
     position: relative;
     background-image: url('fondo-hero.png');
     background-repeat: no-repeat;
-    background-position: top center; /* puedes ajustar a '50% 30%' si quieres subir la imagen */
+    background-position: top center;
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
@@ -55,7 +54,6 @@ ul {
     overflow: hidden;
 }
 
-/* Hero Overlay Fade Bottom */
 .hero::after {
     content: '';
     position: absolute;
@@ -70,63 +68,51 @@ ul {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Oscurece más o menos según el valor */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 0;
 }
 
+/* HERO GRID */
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  max-width: 1400px;
- /* margin: 0 auto;*/
-  gap: 40px;
-  /*padding: 0 3vw;*/
-  /*height: 100vh;*/
-  align-items: center; /* ALINEA ARRIBA */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 1400px;
+    gap: 40px;
+    align-items: center;
 }
 
 .hero-content {
-  max-width: 600px;
-  text-align: left;
-  place-self: start start; /* ARRIBA + IZQUIERDA */
-  padding-top: 80px; /* Ajusta verticalmente */
-  animation: fadeIn 1.5s ease-out;
-  position: relative;
-  z-index: 1;
+    max-width: 700px;
+    text-align: left;
+    place-self: start start;
+    padding-top: 100px;
+    animation: fadeIn 1.5s ease-out;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h1 {
-    font-size: 3.8rem; /* Tamaño de fuente ligeramente más grande */
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra de texto más pronunciada */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
-    font-size: 1.4rem; /* Tamaño de fuente ligeramente más grande */
+    font-size: 1.4rem;
     margin-bottom: 40px;
-    opacity: 0.9; /* Ligeramente más translúcido para que se mezcle con el fondo */
+    opacity: 0.9;
 }
 
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 30px 50px 20px;
     position: absolute;
-    top: 0;  left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
-    z-index: 2;
-}
-
-.scroll-down {
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 2rem;
-    color: white;
-    animation: bounce 2s infinite;
     z-index: 2;
 }
 
@@ -154,33 +140,22 @@ ul {
     color: rgba(255, 255, 255, 0.8);
 }
 
- 
-.hero-content {
-  max-width: 700px;
-  text-align: left;
-  place-self: start start; /* ARRIBA + IZQUIERDA */
-  padding-top: 100px; /* Ajusta verticalmente */
-  animation: fadeIn 1.5s ease-out;
-  position: relative;
-  z-index: 1;
+/* SCROLL INDICATOR */
+.scroll-down {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    animation: bounce 2s infinite;
+    z-index: 2;
 }
 
-.hero-content h1 {
-    /*font-size: 3.8rem; /* Tamaño de fuente ligeramente más grande */
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra de texto más pronunciada */
-}
-
-.hero-content p {
-    font-size: 1.4rem; /* Tamaño de fuente ligeramente más grande */
-    margin-bottom: 40px;
-    opacity: 0.9; /* Ligeramente más translúcido para que se mezcle con el fondo */
-}
-
-/* El botón primario ya no se usa en el hero, pero lo mantenemos por si acaso */
+/* Botón primario (si lo usas) */
 .btn-primary {
     display: inline-block;
-    background: var(--accent-color); /* Usamos el color de acento */
+    background: var(--accent-color);
     color: var(--light-text-color);
     padding: 15px 30px;
     border-radius: 50px;
@@ -194,7 +169,7 @@ ul {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Secciones Generales */
+/* SECCIONES GENERALES */
 .section {
     padding: 80px 50px;
     text-align: center;
@@ -203,7 +178,7 @@ ul {
 }
 
 .section h2 {
-    font-size: 2.8rem; /* Títulos de sección más grandes */
+    font-size: 2.8rem;
     margin-bottom: 40px;
     position: relative;
     display: inline-block;
@@ -212,99 +187,32 @@ ul {
 .section h2::after {
     content: '';
     display: block;
-    width: 80px; /* Línea inferior más larga */
+    width: 80px;
     height: 4px;
-    background: var(--secondary-color); /* Línea del color secundario */
+    background: var(--secondary-color);
     margin: 10px auto 0;
     border-radius: 2px;
 }
 
-.content-wrapper { /* Clase para contener el texto de "Acerca de" */
+.content-wrapper {
     max-width: 900px;
     margin: 0 auto;
-    text-align: justify; /* Texto justificado para formalidad */
+    text-align: justify;
     font-size: 1.15rem;
     line-height: 1.8;
 }
 
 .content-wrapper p {
-    margin-bottom: 1.5em; /* Espacio entre párrafos */
+    margin-bottom: 1.5em;
 }
 
-
-/* Sección Servicios (ahora Portafolio) */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.service-item {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center; /* Asegurar centrado del contenido */
-}
-
-.service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-.service-item .icon-large {
-    font-size: 3.5rem;
-    color: var(--secondary-color); /* Color del icono */
-    margin-bottom: 20px;
-    display: block;
-}
-
-.service-item h3 {
-    font-size: 1.6rem; /* Título de ítem de servicio ligeramente más pequeño */
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-
-.service-item p {
-    font-size: 1rem;
-    color: var(--text-color);
-}
-
-
-/* Sección Nosotros (ahora Portafolio con gradiente de fondo) */
-.section.bg-gradient {
-    background: linear-gradient(45deg, var(--primary-color), var(--bg-dark)); /* Un gradiente más sutil */
-    color: var(--light-text-color);
-}
-
-/* Contacto */
-.contact-email {
-    font-size: 1.5rem; /* Tamaño de email más grande */
-    font-weight: bold;
-    margin-top: 30px;
-}
-
-.contact-email a {
-    color: var(--primary-color); /* El email link en color principal */
-    transition: color 0.3s ease;
-}
-
-.contact-email a:hover {
-    color: var(--secondary-color);
-}
-
-
-
-/* Pie de página */
+/* FOOTER */
 footer {
     background: var(--bg-dark);
     color: var(--light-text-color);
     text-align: center;
     padding: 40px 20px;
-    font-size: 0.9rem; /* Fuente más pequeña para el footer */
+    font-size: 0.9rem;
 }
 
 footer p {
@@ -312,79 +220,85 @@ footer p {
 }
 
 .legal-links a {
-    text-decoration: underline; /* Subrayar enlaces legales */
+    text-decoration: underline;
 }
 
-/* Animaciones CSS */
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(10px); }
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(40px); } /* Antes 20px */
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInUp {
-    from { opacity: 0; transform: translateY(80px); } /* Antes 50px */
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Clases para aplicar con JavaScript */
-.fade-in.animate {
-    animation: fadeIn 1.2s ease-out forwards; /* Antes 1s */
-}
-
-.slide-up.animate {
-    animation: slideInUp 1.2s ease-out forwards; /* Antes 1s */
-}
-
+/* BOTÓN SCROLL TO TOP */
 .scroll-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  font-size: 1.5rem;
-  background-color: var(--primary-color);
-  color: whitesmoke;
-  padding: 12px 14px;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  cursor: pointer;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    color: whitesmoke;
+    padding: 12px 14px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .scroll-top.show {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
+/* ANIMACIONES */
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+}
 
-/* Responsive Design (mantener el que ya tienes) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* MEDIA QUERY PARA MÓVILES */
 @media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        min-height: 100vh;
+        background-size: contain;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .hero-grid {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
     .navbar {
         padding: 20px;
     }
-
- .hero {
-    height: 100vh;
-    min-height: 100vh;
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero-grid {
-    height: auto;
-  }
-}
- 
 
     .nav-links {
         display: none;
@@ -400,10 +314,6 @@ footer p {
 
     .nav-links.active {
         display: flex;
-    }
-
-    .nav-links li {
-        margin: 10px 0;
     }
 
     .menu-toggle {
@@ -426,28 +336,13 @@ footer p {
     .menu-toggle.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .menu-toggle.active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-    }
-    
-    .hero-content {
-    text-align: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 0 auto;
-    }
-
-    .hero-content h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-content p {
-        font-size: 1.1rem;
     }
 
     .section {
@@ -456,10 +351,6 @@ footer p {
 
     .section h2 {
         font-size: 2.2rem;
-    }
-
-    .content-wrapper {
-        text-align: left; /* Justificar el texto solo en pantallas grandes */
     }
 
     .services-grid {
