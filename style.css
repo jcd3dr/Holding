@@ -37,35 +37,97 @@ ul {
 
 /* Encabezado y Navegación */
 
-
 .hero {
-    /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%), */ 
-    background-image: url('fondo-hero.png'); /* Solo la imagen */
+    position: relative;
+    background-image: url('fondo-hero.png');
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center top; /* puedes ajustar a '50% 30%' si quieres subir la imagen */
     background-size: cover;
-    background-blend-mode: multiply;
-    color: var(--light-text-color); /* Para que el texto se vea */
-    padding: 200px 0; /* Para darle altura al hero */
-    min-height: 200vh
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 15px;
     text-align: center;
-    /* position: relative; */
-    /* overflow: hidden; */
-    /* background-attachment: fixed; */
-    background-color: lightgray; /* Color de respaldo para ver si el hero tiene altura */
+    color: var(--light-text-color);
+    overflow: hidden;
 }
 
+/* Hero Overlay Fade Bottom */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 10px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #f9f9f9 100%);
+    z-index: 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Oscurece más o menos según el valor */
+    z-index: 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1400px;
+ /* margin: 0 auto;*/
+  gap: 40px;
+  /*padding: 0 3vw;*/
+  /*height: 100vh;*/
+  align-items: center; /* ALINEA ARRIBA */
+}
+
+.hero-content {
+  max-width: 600px;
+  text-align: left;
+  place-self: start start; /* ARRIBA + IZQUIERDA */
+  padding-top: 80px; /* Ajusta verticalmente */
+  animation: fadeIn 1.5s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem; /* Tamaño de fuente ligeramente más grande */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Sombra de texto más pronunciada */
+}
+
+.hero-content p {
+    font-size: 1.4rem; /* Tamaño de fuente ligeramente más grande */
+    margin-bottom: 40px;
+    opacity: 0.9; /* Ligeramente más translúcido para que se mezcle con el fondo */
+}
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 30px 50px 20px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0;  left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 2;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    animation: bounce 2s infinite;
+    z-index: 2;
 }
 
 .logo {
@@ -92,15 +154,19 @@ ul {
     color: rgba(255, 255, 255, 0.8);
 }
 
+ 
 .hero-content {
-    max-width: 900px; /* Un poco más ancho para el eslogan */
-    margin: 0 auto;
-    padding-top: 50px;
-    animation: fadeIn 1.5s ease-out;
+  max-width: 700px;
+  text-align: left;
+  place-self: start start; /* ARRIBA + IZQUIERDA */
+  padding-top: 100px; /* Ajusta verticalmente */
+  animation: fadeIn 1.5s ease-out;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content h1 {
-    font-size: 3.8rem; /* Tamaño de fuente ligeramente más grande */
+    /*font-size: 3.8rem; /* Tamaño de fuente ligeramente más grande */
     margin-bottom: 20px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra de texto más pronunciada */
 }
@@ -230,6 +296,8 @@ ul {
     color: var(--secondary-color);
 }
 
+
+
 /* Pie de página */
 footer {
     background: var(--bg-dark);
@@ -248,6 +316,10 @@ footer p {
 }
 
 /* Animaciones CSS */
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(40px); } /* Antes 20px */
     to { opacity: 1; transform: translateY(0); }
@@ -267,6 +339,28 @@ footer p {
     animation: slideInUp 1.2s ease-out forwards; /* Antes 1s */
 }
 
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.5rem;
+  background-color: var(--primary-color);
+  color: whitesmoke;
+  padding: 12px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 /* Responsive Design (mantener el que ya tienes) */
 @media (max-width: 768px) {
@@ -274,6 +368,17 @@ footer p {
         padding: 20px;
     }
 
+    .hero-grid {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
     .nav-links {
         display: none;
         flex-direction: column;
@@ -319,6 +424,13 @@ footer p {
     }
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .hero-content {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
     }
 
     .hero-content h1 {
