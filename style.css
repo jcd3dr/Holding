@@ -41,7 +41,7 @@ ul {
     position: relative;
     background-image: url('fondo-hero.png');
     background-repeat: no-repeat;
-    background-position: center top; /* puedes ajustar a '50% 30%' si quieres subir la imagen */
+    background-position: center center; /* puedes ajustar a '50% 30%' si quieres subir la imagen */
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
