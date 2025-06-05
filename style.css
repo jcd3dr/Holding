@@ -43,7 +43,7 @@ ul {
     background-image: url('fondo-hero.png'); /* Solo la imagen */
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: auto;
     background-blend-mode: multiply;
     color: var(--light-text-color); /* Para que el texto se vea */
     padding: 200px 0; /* Para darle altura al hero */
@@ -287,13 +287,20 @@ footer p {
     }
 
     .nav-links.active {
-        display: flex;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
     .nav-links li {
-        margin: 10px 0;
+        margin: 100px 0;
     }
-
+ .nav-links a {
+    display: block;
+    width: 100%;
+  }
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -320,7 +327,9 @@ footer p {
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-
+.hero-content {
+  padding: 0 20px;
+}
     .hero-content h1 {
         font-size: 2.8rem;
     }
