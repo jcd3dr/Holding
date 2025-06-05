@@ -44,13 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Efecto Parallax Básico (opcional y más avanzado)
     // Este es un ejemplo simple, para efectos más complejos se recomienda una librería.
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            let scrollY = window.pageYOffset;
-            heroSection.style.backgroundPositionY = -scrollY * 0.3 + 'px'; // Ajusta la velocidad aquí
-        });
-    }
+//    const heroSection = document.querySelector('.hero');
+  //  if (heroSection) {
+    //    window.addEventListener('scroll', () => {
+     //       let scrollY = window.pageYOffset;
+      //      heroSection.style.backgroundPositionY = -scrollY * 0.3 + 'px'; // Ajusta la velocidad aquí
+   //     });
+  //  }
 
     // Ejemplo de formulario de contacto (sólo frontend)
     const contactForm = document.querySelector('.contact-form');
@@ -62,4 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
             contactForm.reset(); // Limpia el formulario
         });
     }
+});
+
+// Botón de "volver arriba"
+const scrollBtn = document.getElementById('scrollTopBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollBtn.classList.add('show');
+    } else {
+        scrollBtn.classList.remove('show');
+    }
+});
+
+scrollBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
