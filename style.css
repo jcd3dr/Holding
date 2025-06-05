@@ -42,7 +42,7 @@ ul {
     background-image: url('fondo-hero.png');
     background-repeat: no-repeat;
     background-position: top center; /* puedes ajustar a '50% 30%' si quieres subir la imagen */
-    background-size: contain;
+    background-size: 100% auto;
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
