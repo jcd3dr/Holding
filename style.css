@@ -333,19 +333,31 @@ footer p {
     }
 
     .nav-links {
-        display: none;
+        display: none; /* Initially hidden, .active will show it */
         flex-direction: column;
-        width: 100%;
-        background: rgba(44, 62, 80, 0.95);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        padding: 20px 0;
-        animation: slideDownMenu 1.4s ease-out forwards;
+        align-items: center; /* Center items like text */
+
+        position: fixed; /* Centering relative to viewport */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* Final centered position */
+
+        width: 90vw; /* Responsive width */
+        max-width: 400px; /* Max width */
+        max-height: 80vh; /* Max height */
+        overflow-y: auto; /* Scroll for content overflow */
+
+        background: rgba(44, 62, 80, 0.98); /* Slightly more opaque background */
+        padding: 30px; /* More padding for a boxed look */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+        z-index: 1001; /* Above other content */
     }
 
     .nav-links.active {
         display: flex;
+        /* The transform for final position is already on .nav-links.
+           If we animate transform (e.g. scale, opacity), it will be in a new keyframe animation. */
     }
 
     .nav-links li {
@@ -409,7 +421,18 @@ footer p {
     }
 }
 
-@keyframes slideDownMenu {
+@keyframes menuFadeInScaleUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9); /* Start slightly smaller and faded out */
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);   /* End at full size and opacity */
+    }
+}
+
+@keyframes slideDownMenu { /* This is the old animation, will be removed or ensured it's not used by .nav-links */
     from {
         transform: translateY(-100%);
         opacity: 0;
