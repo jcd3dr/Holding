@@ -43,7 +43,7 @@ ul {
     background-image: url('fondo-hero.png'); /* Solo la imagen */
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: contain;
+    background-size: full;
     background-blend-mode: multiply;
     color: var(--light-text-color); /* Para que el texto se vea */
     padding: 200px 0; /* Para darle altura al hero */
