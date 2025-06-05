@@ -42,7 +42,7 @@ ul {
  position: relative;
     background-image: url('fondo-hero.png');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
