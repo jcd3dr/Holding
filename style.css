@@ -368,18 +368,23 @@ footer p {
         padding: 20px;
     }
 
-    .hero-grid {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 20px;
-  }
  .hero {
+    height: 100vh;
+    min-height: 100vh;
     background-size: contain;
     background-position: top center;
     background-repeat: no-repeat;
-    background-attachment: scroll; /* en móviles evita bugs de fixed */
+    background-attachment: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
+
+  .hero-grid {
+    height: auto;
+  }
+}
+ 
 
     .nav-links {
         display: none;
@@ -432,6 +437,8 @@ footer p {
     text-align: center;
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
     margin: 0 auto;
     }
 
