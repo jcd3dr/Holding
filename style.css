@@ -42,13 +42,16 @@ ul {
     /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%), */ 
     background-image: url('fondo-hero.png'); /* Solo la imagen */
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: auto;
+    background-position: center;
+    background-size: cover;
     background-blend-mode: multiply;
     color: var(--light-text-color); /* Para que el texto se vea */
     padding: 200px 0; /* Para darle altura al hero */
-    min-height: 200vh
+    min-height: 100vh
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /* position: relative; */
     /* overflow: hidden; */
     /* background-attachment: fixed; */
