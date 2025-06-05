@@ -39,29 +39,22 @@ ul {
 
 
 .hero {
- position: relative;
-    background-image: url('fondo-hero.png');
-    background-size: cover;
-    background-position: center center;
+    /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%), */ 
+    background-image: url('fondo-hero.png'); /* Solo la imagen */
     background-repeat: no-repeat;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: var(--light-text-color); /* Para que el texto se vea */
+    padding: 200px 0; /* Para darle altura al hero */
+    min-height: 200vh
     text-align: center;
-    color: var(--light-text-color);
-    padding: 0 20px;
-    overflow: hidden;
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* background-attachment: fixed; */
+    background-color: lightgray; /* Color de respaldo para ver si el hero tiene altura */
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Oscurece más o menos según el valor */
-    z-index: 0;
-}
 
 .navbar {
     display: flex;
@@ -104,8 +97,6 @@ ul {
     margin: 0 auto;
     padding-top: 50px;
     animation: fadeIn 1.5s ease-out;
-    position: relative;
-    z-index: 1;
 }
 
 .hero-content h1 {
@@ -296,20 +287,13 @@ footer p {
     }
 
     .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
+        display: flex;
+    }
 
     .nav-links li {
-        margin: 100px 0;
+        margin: 10px 0;
     }
- .nav-links a {
-    display: block;
-    width: 100%;
-  }
+
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -336,9 +320,7 @@ footer p {
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-.hero-content {
-  padding: 0 20px;
-}
+
     .hero-content h1 {
         font-size: 2.8rem;
     }
