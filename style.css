@@ -341,7 +341,7 @@ footer p {
         top: 60px;
         left: 0;
         padding: 20px 0;
-        animation: slideDownMenu 0.4s ease-out forwards;
+        animation: slideDownMenu 1.4s ease-out forwards;
     }
 
     .nav-links.active {
