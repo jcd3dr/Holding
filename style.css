@@ -9,15 +9,6 @@
     --bg-dark: #2c3e50; /* Mantener el azul oscuro para fondos */
     --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombras más suaves */
     --box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.1);
-
-    /* Colores temporales para depuración */
-    --debug-hero: transparent; /* rgba(255, 0, 0, 0.2); */
-    --debug-hero-container: transparent; /* rgba(0, 0, 255, 0.2); */
-    --debug-hero-top: transparent; /* rgba(0, 255, 0, 0.2); */
-    --debug-hero-nombre: transparent; /* rgba(255, 165, 0, 0.2); */
-    --debug-hero-logo: transparent; /* rgba(128, 0, 128, 0.2); */
-    --debug-hero-navbar: transparent; /* rgba(0, 255, 255, 0.2); */
-    --debug-hero-body: transparent; /* rgba(255, 215, 0, 0.2); */
 }
 
 /* Reset básico */
@@ -142,13 +133,13 @@ ul {
 }
 
 .hero-body h1 {
-    font-size: 3.8rem;
+    font-size: clamp(2.5rem, 5vw + 1rem, 3.8rem);
     margin-bottom: 20px;
     line-height: 1.2;
 }
 
 .hero-body p {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 2.5vw + 0.5rem, 1.3rem);
     margin-bottom: 40px;
     max-width: 600px; /* Limita el ancho del párrafo */
 }
@@ -433,19 +424,14 @@ footer p {
     .hero-body {
         align-items: center; /* Centra el texto en móviles */
         text-align: center;
-        padding-top: 80px; /* Desplaza el texto más abajo en móviles */
+        padding-top: 60px; /* Desplaza el texto más abajo en móviles */
         margin-top: 0; /* Elimina el ajuste negativo para móviles */
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    .hero-body h1 {
-        font-size: 2.5rem; /* Título más pequeño para móviles */
-    }
-
-    .hero-body p {
-        font-size: 1.1rem; /* Párrafo más pequeño para móviles */
-    }
+    /* .hero-body h1 ahora es manejado por clamp() */
+    /* .hero-body p ahora es manejado por clamp() */
 
     .section {
         padding: 50px 20px; /* Menos padding en secciones */
@@ -478,16 +464,3 @@ footer p {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 o 3 columnas */
     }
 }
-
-/* Colores de depuración (DESCOMENTAR para usar) */
-/*
-:root {
-    --debug-hero: rgba(255, 0, 0, 0.2);
-    --debug-hero-container: rgba(0, 0, 255, 0.2);
-    --debug-hero-top: rgba(0, 255, 0, 0.2);
-    --debug-hero-nombre: rgba(255, 165, 0, 0.2);
-    --debug-hero-logo: rgba(128, 0, 128, 0.2);
-    --debug-hero-navbar: rgba(0, 255, 255, 0.2);
-    --debug-hero-body: rgba(255, 215, 0, 0.2);
-}
-*/

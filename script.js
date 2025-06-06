@@ -42,26 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Efecto Parallax Básico (opcional y más avanzado)
-    // Este es un ejemplo simple, para efectos más complejos se recomienda una librería.
-//    const heroSection = document.querySelector('.hero');
-  //  if (heroSection) {
-    //    window.addEventListener('scroll', () => {
-     //       let scrollY = window.pageYOffset;
-      //      heroSection.style.backgroundPositionY = -scrollY * 0.3 + 'px'; // Ajusta la velocidad aquí
-   //     });
-  //  }
-
-    // Ejemplo de formulario de contacto (sólo frontend)
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Evita que la página se recargue
-            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-            // Aquí es donde normalmente enviarías los datos a un servidor (backend)
-            contactForm.reset(); // Limpia el formulario
-        });
-    }
 });
 
 // Botón de "volver arriba"
