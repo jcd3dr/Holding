@@ -1,15 +1,15 @@
 /* Variables CSS para una gestión más fácil de colores y fuentes */
 :root {
-    --primary-color: #2c3e50; /* Azul oscuro muy corporativo */
-    --secondary-color: #3498db; /* Azul corporativo un poco más claro */
-    --accent-color: #27ae60; /* Un verde sutil para acentos o éxito */
-    --text-color: #333;
-    --light-text-color: #f4f4f4;
-    --bg-light: #f9f9f9;
-    --bg-dark: #2c3e50; /* Mantener el azul oscuro para fondos */
-    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombras más suaves */
-    --box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.1);
-    --debug-lang-selector: transparent; /* rgba(0, 255, 0, 0.2); */
+    --primary-color: #1A202C;       /* Was #2c3e50 (Dark corporate blue) */
+    --secondary-color: #2D3748;     /* Was #3498db (Lighter corporate blue) */
+    --accent-color: #4A90E2;        /* Was #27ae60 (Green) */
+    --text-color: #2D3748;          /* Was #333 */
+    --light-text-color: #F7FAFC;    /* Was #f4f4f4 */
+    --bg-light: #FFFFFF;            /* Was #f9f9f9 */
+    --bg-dark: #1A202C;            /* Was #2c3e50 */
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05); /* Keep as is or adjust if needed */
+    --box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Keep as is or adjust if needed */
+    --debug-lang-selector: transparent;
 }
 
 /* Reset básico */
@@ -112,11 +112,15 @@ ul {
 .hero-navbar .nav-links a {
     color: var(--light-text-color);
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease; /* Added border-bottom-color transition */
+    position: relative; /* Needed for pseudo-element positioning */
+    padding-bottom: 5px; /* Space for the border */
+    border-bottom: 2px solid transparent; /* Transparent border initially */
 }
 
 .hero-navbar .nav-links a:hover {
-    color: var(--accent-color); /* Cambio de color al pasar el ratón */
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color); /* Solid border on hover */
 }
 
 /* Bloque central del hero: Título y subtítulo */
@@ -152,13 +156,15 @@ ul {
     padding: 15px 30px;
     border-radius: 50px;
     font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: var(--box-shadow-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Ensure all properties are transitioned */
+    box-shadow: var(--box-shadow-dark); /* Current: 0 8px 16px rgba(0, 0, 0, 0.1) */
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly softer/more spread shadow */
+    /* Optionally, slightly darken or lighten the background color on hover */
+    /* background-color: darken(var(--accent-color), 5%); /* Example if using a preprocessor, otherwise specify hex */
 }
 
 /* --------------------
@@ -311,25 +317,6 @@ footer p {
 /* --------------------
    Animaciones CSS
    -------------------- */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInUp {
-    from { opacity: 0; transform: translateY(80px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Clases para aplicar con JavaScript */
-.fade-in.animate {
-    animation: fadeIn 1.2s ease-out forwards;
-}
-
-.slide-up.animate {
-    animation: slideInUp 1.2s ease-out forwards;
-}
-
 @keyframes slideDownMenu {
     from {
         transform: translateY(-100%);

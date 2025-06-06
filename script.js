@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Animaciones al hacer Scroll (Intersection Observer)
+    /*
     const sectionsToAnimate = document.querySelectorAll('.fade-in, .slide-up');
     const observerOptions = {
         root: null, 
@@ -168,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionsToAnimate.forEach(section => {
         observer.observe(section);
     });
+    */
 
     // Initialize language
     const initialLang = getInitialLanguage();
