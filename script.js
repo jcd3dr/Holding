@@ -5,7 +5,7 @@ const translations = {
         nav_about: "Acerca",
         nav_portfolio: "Portafolio",
         nav_contact: "Contacto",
-        hero_title: "Structure, Control and Expansion",
+        hero_title: "Estructura, Control y Expansión",
         hero_subtitle: "Una holding moderna e inteligente que centraliza propiedad intelectual, contabilidad y arquitectura interempresarial—asegurando eficiencia, privacidad y control operacional en todo su propio ecosistema de negocios.",
         hero_button: "Conócenos",
         about_section_title: "Acerca de Cruz Bizz Hld LLC",
