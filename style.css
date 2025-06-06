@@ -9,6 +9,7 @@
     --bg-dark: #2c3e50; /* Mantener el azul oscuro para fondos */
     --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombras más suaves */
     --box-shadow-dark: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --debug-lang-selector: transparent; /* rgba(0, 255, 0, 0.2); */
 }
 
 /* Reset básico */
@@ -335,6 +336,57 @@ footer p {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/* Language Selector Styles */
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust spacing as needed */
+    background-color: var(--debug-lang-selector); /* Optional: for debugging positioning */
+}
+
+.lang-option {
+    color: var(--light-text-color);
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease, transform 0.2s ease;
+    font-size: 0.9rem; /* Slightly smaller than nav links */
+}
+
+.lang-option:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.lang-option.active {
+    color: var(--accent-color); /* Highlight active language */
+    text-decoration: underline;
+    pointer-events: none; /* Disable click on active language */
+}
+
+.lang-separator {
+    color: var(--light-text-color);
+    margin: 0 5px;
+    font-size: 0.9rem;
+}
+
+/* Responsive adjustments for language selector if needed */
+@media (max-width: 768px) {
+    .hero-top {
+        /* Ensure space for logo, lang selector, and menu toggle */
+        /* Might need to adjust flex properties if layout breaks */
+    }
+    .language-selector {
+        /* Example: order it differently or adjust margin for mobile if needed */
+        /* For now, let's assume it fits. If not, adjustments are needed here. */
+        /* Potentially reduce font size slightly more on very small screens if needed */
+         font-size: 0.85rem;
+    }
+    .lang-option, .lang-separator {
+        font-size: 0.85rem; /* Match parent or set explicitly */
     }
 }
 

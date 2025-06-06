@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cruz Bizz Hld LLC - Eje Estratégico y Financiero</title>
+    <title>Cruz Bizz Hld LLC - Eje Estratégico y Financiero</title> <!-- Initial title, will be updated by JS -->
+    <meta id="meta-description" name="description" content="Holding moderna que centraliza propiedad intelectual, contabilidad y arquitectura interempresarial para eficiencia y control."> <!-- Initial description -->
+
+    <link rel="alternate" hreflang="es" href="" />
+    <link rel="alternate" hreflang="en" href="" />
+    <link rel="alternate" hreflang="x-default" href="" />
+
     <!-- Enlace al archivo CSS principal -->
     <link rel="stylesheet" href="style.css">
     <!-- Enlace a Font Awesome para iconos -->
@@ -27,12 +33,17 @@
                     <!-- Placeholder para la imagen del logo. Se recomienda usar un SVG o un icono si no hay una imagen. -->
                     <img src="https://placehold.co/150x50/2c3e50/ffffff?text=Cruz+Bizz+Hld+LLC" alt="Logo de Cruz Bizz Hld LLC" />
                 </div>
+                <div class="language-selector">
+                    <span class="lang-option" data-lang-switch="es">ES</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-option" data-lang-switch="en">EN</span>
+                </div>
                 <!-- Menú de navegación principal -->
                 <nav class="hero-navbar">
                     <ul class="nav-links">
-                        <li><a href="#acerca">Acerca</a></li>
-                        <li><a href="#portafolio">Portafolio</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#acerca" data-lang-key="nav_about">Acerca</a></li>
+                        <li><a href="#portafolio" data-lang-key="nav_portfolio">Portafolio</a></li>
+                        <li><a href="#contacto" data-lang-key="nav_contact">Contacto</a></li>
                     </ul>
                     <!-- Botón de menú hamburguesa para móviles -->
                     <div class="menu-toggle" id="mobile-menu">
@@ -45,13 +56,13 @@
 
             <!-- Bloque central del hero: Título y Subtítulo -->
             <div class="hero-body">
-                <h1>Structure, Control and Expansion</h1>
-                <p>
+                <h1 data-lang-key="hero_title">Structure, Control and Expansion</h1>
+                <p data-lang-key="hero_subtitle">
                     A modern and intelligent holding that centralizes intellectual property,
                     accounting, and intercompany architecture—ensuring efficiency, privacy,
                     and operational control across its own business ecosystem.
                 </p>
-                <a href="#acerca" class="btn-primary">Conócenos</a>
+                <a href="#acerca" class="btn-primary" data-lang-key="hero_button">Conócenos</a>
             </div>
         </div>
     </header>
@@ -60,61 +71,61 @@
     <main>
         <!-- Sección "Acerca de Cruz Bizz Hld LLC" -->
         <section id="acerca" class="section fade-in">
-            <h2>Acerca de Cruz Bizz Hld LLC</h2>
+            <h2 data-lang-key="about_section_title">Acerca de Cruz Bizz Hld LLC</h2>
             <div class="content-wrapper">
-                <p>Cruz Bizz Hld LLC es una compañía de cartera (holding) de propiedad privada, organizada en el estado de Wyoming, Estados Unidos.</p>
-                <p>Constituida el 5 de marzo de 2024 y liderada por su fundador, Cruz Bizz Hld LLC funciona como el eje estratégico, legal y financiero de un ecosistema empresarial que integra subsidiarias en distintas jurisdicciones, principalmente en el estado de Florida.</p>
-                <p>Nuestro modelo operativo se fundamenta en principios de legalidad, privacidad y organización estructural. Las operaciones de la holding preservan la separación entre lo empresarial y lo individual, asegurando una gestión eficiente y la protección de activos.</p>
+                <p data-lang-key="about_p1">Cruz Bizz Hld LLC es una compañía de cartera (holding) de propiedad privada, organizada en el estado de Wyoming, Estados Unidos.</p>
+                <p data-lang-key="about_p2">Constituida el 5 de marzo de 2024 y liderada por su fundador, Cruz Bizz Hld LLC funciona como el eje estratégico, legal y financiero de un ecosistema empresarial que integra subsidiarias en distintas jurisdicciones, principalmente en el estado de Florida.</p>
+                <p data-lang-key="about_p3">Nuestro modelo operativo se fundamenta en principios de legalidad, privacidad y organización estructural. Las operaciones de la holding preservan la separación entre lo empresarial y lo individual, asegurando una gestión eficiente y la protección de activos.</p>
             </div>
         </section>
 
         <!-- Sección "Áreas Estratégicas" (Portafolio) -->
         <section id="portafolio" class="section bg-gradient slide-up">
-            <h2>Áreas Estratégicas</h2>
+            <h2 data-lang-key="portfolio_section_title">Áreas Estratégicas</h2>
             <div class="services-grid">
                 <div class="service-item">
-                    <i class="fas fa-store icon-large"></i> <h3>Comercio Electrónico y Marketplaces Digitales</h3>
-                    <p>Enfoque en la expansión y optimización de plataformas de venta online.</p>
+                    <i class="fas fa-store icon-large"></i> <h3 data-lang-key="portfolio_item1_title">Comercio Electrónico y Marketplaces Digitales</h3>
+                    <p data-lang-key="portfolio_item1_desc">Enfoque en la expansión y optimización de plataformas de venta online.</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-chalkboard-teacher icon-large"></i> <h3>Servicios de Consultoría y Educación Online</h3>
-                    <p>Fomento del conocimiento y la capacitación en entornos digitales.</p>
+                    <i class="fas fa-chalkboard-teacher icon-large"></i> <h3 data-lang-key="portfolio_item2_title">Servicios de Consultoría y Educación Online</h3>
+                    <p data-lang-key="portfolio_item2_desc">Fomento del conocimiento y la capacitación en entornos digitales.</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-chart-line icon-large"></i> <h3>Marketing Digital y Gestión de Activos Web</h3>
-                    <p>Estrategias avanzadas para potenciar la presencia y visibilidad online.</p>
+                    <i class="fas fa-chart-line icon-large"></i> <h3 data-lang-key="portfolio_item3_title">Marketing Digital y Gestión de Activos Web</h3>
+                    <p data-lang-key="portfolio_item3_desc">Estrategias avanzadas para potenciar la presencia y visibilidad online.</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-robot icon-large"></i> <h3>Software, Automatización e Inteligencia Artificial</h3>
-                    <p>Desarrollo y aplicación de soluciones tecnológicas innovadoras.</p>
+                    <i class="fas fa-robot icon-large"></i> <h3 data-lang-key="portfolio_item4_title">Software, Automatización e Inteligencia Artificial</h3>
+                    <p data-lang-key="portfolio_item4_desc">Desarrollo y aplicación de soluciones tecnológicas innovadoras.</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-building icon-large"></i> <h3>Bienes Raíces para Renta Pasiva</h3>
-                    <p>Inversión y gestión de propiedades con enfoque en la rentabilidad.</p>
+                    <i class="fas fa-building icon-large"></i> <h3 data-lang-key="portfolio_item5_title">Bienes Raíces para Renta Pasiva</h3>
+                    <p data-lang-key="portfolio_item5_desc">Inversión y gestión de propiedades con enfoque en la rentabilidad.</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-truck-moving icon-large"></i> <h3>Logística, Importación y Exportación</h3>
-                    <p>Optimización de cadenas de suministro y flujos de comercio global.</p>
+                    <i class="fas fa-truck-moving icon-large"></i> <h3 data-lang-key="portfolio_item6_title">Logística, Importación y Exportación</h3>
+                    <p data-lang-key="portfolio_item6_desc">Optimización de cadenas de suministro y flujos de comercio global.</p>
                 </div>
                 <div class="service-item">
-                    <i class="fas fa-handshake icon-large"></i> <h3>Franquicias y Estructuras de Licenciamiento</h3>
-                    <p>Estrategias de expansión y formalización de modelos de negocio.</p>
+                    <i class="fas fa-handshake icon-large"></i> <h3 data-lang-key="portfolio_item7_title">Franquicias y Estructuras de Licenciamiento</h3>
+                    <p data-lang-key="portfolio_item7_desc">Estrategias de expansión y formalización de modelos de negocio.</p>
                 </div>
             </div>
         </section>
 
         <!-- Sección "Contacto General" -->
         <section id="contacto" class="section fade-in">
-            <h2>Contacto General</h2>
-            <p>Para consultas generales o asuntos administrativos, por favor contáctenos a través de la siguiente dirección de correo electrónico.</p>
+            <h2 data-lang-key="contact_section_title">Contacto General</h2>
+            <p data-lang-key="contact_p1">Para consultas generales o asuntos administrativos, por favor contáctenos a través de la siguiente dirección de correo electrónico.</p>
             <p class="contact-email"><a href="mailto:info@cruzbizzhld.com">info@cruzbizzhld.com</a></p>
         </section>
     </main>
 
     <!-- Pie de página -->
     <footer>
-        <p>Cruz Bizz Hld LLC | Sheridan, WY, USA | &copy; 2024.</p>
-        <!-- <p class="legal-links"><a href="#" style="color: var(--light-text-color);">Política de Privacidad</a></p> -->
+        <p data-lang-key="footer_copyright">Cruz Bizz Hld LLC | Sheridan, WY, USA | &copy; 2024.</p>
+        <!-- <p class="legal-links"><a href="#" style="color: var(--light-text-color);" data-lang-key="footer_privacy">Política de Privacidad</a></p> -->
     </footer>
 
     <!-- Botón de "volver arriba" -->
