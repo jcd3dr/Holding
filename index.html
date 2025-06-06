@@ -4,45 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cruz Bizz Hld LLC - Eje Estratégico y Financiero</title>
+    <!-- Enlace al archivo CSS principal -->
     <link rel="stylesheet" href="style.css">
+    <!-- Enlace a Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
- <header class="hero">
-    <nav class="navbar">
-        <div class="logo">Cruz Bizz Hld LLC</div>
-        <ul class="nav-links">
-            <li><a href="#acerca">Acerca</a></li>
-            <li><a href="#portafolio">Portafolio</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    <!-- Sección Hero de pantalla completa -->
+    <header class="hero">
+        <!-- Superposición oscura para mejorar el contraste del texto -->
+        <div class="hero-overlay"></div>
+
+        <!-- Contenedor principal del hero -->
+        <div class="hero-container">
+            <!-- Bloque superior del hero: Nombre, Logo, Menú -->
+            <div class="hero-top">
+                <!-- Nombre de la empresa -->
+                <div class="hero-nombre">Cruz Bizz Hld LLC</div>
+                <!-- Logo de la empresa (opcional, si existe 'logo.png') -->
+                <div class="hero-logo">
+                    <!-- Placeholder para la imagen del logo. Se recomienda usar un SVG o un icono si no hay una imagen. -->
+                    <img src="https://placehold.co/40x40/27ae60/ffffff?text=LOGO" alt="Logo Cruz Bizz Hld LLC" />
+                </div>
+                <!-- Menú de navegación principal -->
+                <nav class="hero-navbar">
+                    <ul class="nav-links">
+                        <li><a href="#acerca">Acerca</a></li>
+                        <li><a href="#portafolio">Portafolio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                    <!-- Botón de menú hamburguesa para móviles -->
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Bloque central del hero: Título y Subtítulo -->
+            <div class="hero-body">
+                <h1>Structure, Control and Expansion</h1>
+                <p>
+                    A modern and intelligent holding that centralizes intellectual property,
+                    accounting, and intercompany architecture—ensuring efficiency, privacy,
+                    and operational control across its own business ecosystem.
+                </p>
+                <a href="#acerca" class="btn-primary">Conócenos</a>
+            </div>
         </div>
-    </nav>
+    </header>
 
-  <div class="hero">a
-  <div class="hero-grid">
-    <div class="hero-content">
-      <h1 class="animated-title">
-        The Strategic Core of <br>Structure, Control and Expansion 
-      </h1>
-      <p>
-        A modern and intelligent holding that centralizes intellectual property, accounting, and intercompany architecture—ensuring efficiency, privacy, and operational control across its own business ecosystem.
-      </p>
-    </div>
-  </div>
-</div>
-
-
-  
-    <a href="#acerca" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
-</header>
-
+    <!-- Contenido principal de la página -->
     <main>
+        <!-- Sección "Acerca de Cruz Bizz Hld LLC" -->
         <section id="acerca" class="section fade-in">
             <h2>Acerca de Cruz Bizz Hld LLC</h2>
             <div class="content-wrapper">
@@ -52,6 +68,7 @@
             </div>
         </section>
 
+        <!-- Sección "Áreas Estratégicas" (Portafolio) -->
         <section id="portafolio" class="section bg-gradient slide-up">
             <h2>Áreas Estratégicas</h2>
             <div class="services-grid">
@@ -86,6 +103,7 @@
             </div>
         </section>
 
+        <!-- Sección "Contacto General" -->
         <section id="contacto" class="section fade-in">
             <h2>Contacto General</h2>
             <p>Para consultas generales o asuntos administrativos, por favor contáctenos a través de la siguiente dirección de correo electrónico.</p>
@@ -93,11 +111,16 @@
         </section>
     </main>
 
+    <!-- Pie de página -->
     <footer>
         <p>Cruz Bizz Hld LLC | Sheridan, WY, USA | &copy; 2025.</p>
         <p class="legal-links"><a href="#" style="color: var(--light-text-color);">Política de Privacidad</a></p>
     </footer>
-<a href="#" id="scrollTopBtn" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
-<script src="script.js"></script>
+
+    <!-- Botón de "volver arriba" -->
+    <a href="#" id="scrollTopBtn" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
