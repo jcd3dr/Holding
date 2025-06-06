@@ -169,6 +169,8 @@ ul {
     text-align: center;
     background: var(--bg-light);
     transition: background 0.5s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .section h2 {
