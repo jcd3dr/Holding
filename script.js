@@ -31,6 +31,7 @@ const translations = {
         contact_p1: "Para consultas generales o asuntos administrativos, por favor contáctenos a través de la siguiente dirección de correo electrónico.",
         footer_copyright: "Cruz Bizz Hld LLC | Sheridan, WY, USA | © 2024.",
         footer_privacy: "Política de Privacidad",
+        footer_legal: "Aviso Legal",
         page_title: "Cruz Bizz Hld LLC - Eje Estratégico y Financiero",
         page_description: "Holding moderna que centraliza propiedad intelectual, contabilidad y arquitectura interempresarial para eficiencia y control."
     },
@@ -65,6 +66,7 @@ const translations = {
         contact_p1: "For general inquiries or administrative matters, please contact us at the following email address.",
         footer_copyright: "Cruz Bizz Hld LLC | Sheridan, WY, USA | © 2024.",
         footer_privacy: "Privacy Policy",
+        footer_legal: "Legal Notice",
         page_title: "Cruz Bizz Hld LLC - Strategic and Financial Axis",
         page_description: "Modern holding company centralizing intellectual property, accounting, and intercompany architecture for efficiency and control."
     }

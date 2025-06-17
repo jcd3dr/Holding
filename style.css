@@ -119,6 +119,25 @@ ul {
     color: var(--accent-color); /* Cambio de color al pasar el ratón */
 }
 
+/* Encabezado para páginas secundarias */
+.subpage-header {
+    background: var(--bg-dark);
+    color: var(--light-text-color);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-link {
+    color: var(--light-text-color);
+    font-weight: bold;
+}
+
+.home-link:hover {
+    color: var(--accent-color);
+}
+
 /* Bloque central del hero: Título y subtítulo */
 .hero-body {
     flex-grow: 1; /* Permite que este contenedor ocupe el espacio restante */
