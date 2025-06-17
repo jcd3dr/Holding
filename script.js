@@ -90,6 +90,16 @@ function setLanguage(lang) {
         }
     });
 
+    // Show or hide elements that have a data-lang attribute
+    const langSpecificElements = document.querySelectorAll('[data-lang]');
+    langSpecificElements.forEach(element => {
+        if (element.getAttribute('data-lang') === lang) {
+            element.style.display = '';
+        } else {
+            element.style.display = 'none';
+        }
+    });
+
     // Update page title
     if (translations[lang] && translations[lang]['page_title']) {
         document.title = translations[lang]['page_title'];
